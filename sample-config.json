@@ -1,0 +1,8 @@
+{
+	"local_port": 5432,
+	"remote_port": 18443,
+	"remote_user": "alice",
+	"remote_host": "111.222.43.232",
+	"rpc_user": "alice",
+	"rpc_password": "password123"
+}
