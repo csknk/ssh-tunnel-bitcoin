@@ -33,6 +33,8 @@ When set up, the SSH tunnel forwards any traffic sent to a specified port on loc
 
 Taking the sample config data shown above, the SSH tunnel would forward data sent to `localhost:5555` to `111.222.43.232:18443`.
 
+Forwarding a port from the client machine to the server machine in this way is known as __Local Forwarding__.
+
 "Manual" Setup
 --------------
 You can easily set up an SSH tunnel by running the following terminal command:
@@ -40,6 +42,8 @@ You can easily set up an SSH tunnel by running the following terminal command:
 ```
 ssh -v -fNL 5555:111.222.43.232:18443 remote_user@111.222.43.232
 ```
+The `-L` option in OpenSSH configures __local port forwarding__.
+
 Once this process is running, a connection can be made to `111.222.43.232:18443` by sending requests to `http://127.0.0.1:5555`. SSH will encrypt and forward data sent to this port on localhost and send it to the remote host, where it is forwarded to the specified remote port.
 
 CURL Request

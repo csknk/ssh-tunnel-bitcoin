@@ -14,12 +14,9 @@ def main(config):
             )
     tunnel.start()
     time.sleep(1)
-    headers = {
-        'content-type': 'text/plain;',
-    }
 
+    headers = {'content-type': 'text/plain;'}
     data = '{"jsonrpc":"1.0","id":"curltext","method":"listunspent","params":[]}'
-
     response = requests.post(
             "http://127.0.0.1:{}/".format(config_data["local_port"]),
             headers=headers, data=data, auth=(config_data["rpc_user"], config_data["rpc_password"])
